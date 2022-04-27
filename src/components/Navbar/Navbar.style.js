@@ -24,33 +24,16 @@ export const Logo = styled.h1`
     display: none;
   }
 `
-export const Center = styled.div`
-  flex: 1;
-`
-export const MobileIcon = styled.button`
+export const MobileLogo = styled.h1`
+  font-weight: bold;
+  text-align:center;
   display: none;
-  border: none;
-  background:none;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 700px) {
     display:block;
   }
 `
-export const MobileMenuWrapper = styled.div`
-    flex:1;
-    @media screen and (max-width:960px) {
-      display: none;
-    }
-`
-export const MobileMenuListItems = styled.ul`
-  display: flex;
-  justify-content:space-between;
-  align-items:center;
-`
-export const MobileMenuItem = styled.li`
-    list-style: none;
-    a: hover { 
-      text-decoration: underline;
-    }
+export const Center = styled.div`
+  flex: 1;
 `
 export const Right = styled.div`
   flex: 1;
@@ -59,25 +42,6 @@ export const Right = styled.div`
   justify-content: flex-end;
   @media(min-width: 768px) {
     display: hidden;
-  }
-`
-export const MenuItem = styled.div`
-  font-size: 14px;
-  cursor: pointer;
-  margin-left: 25px;
-  text-decoration: none;
-  color: black;
-  a:hover {
-    text-decoration: underline;
-  }
-`
-export const SLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  display: flex;
-  align-items: center;
-  a: hover {
-   text-decoration: underline;
   }
 `
 export const DropDown = styled.ul`
@@ -92,17 +56,19 @@ export const DropDownItems = styled.li`
 `
 export const NavbarExtendedContainer = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: row;
   @media (min-width: 700px) {
     display:none;
   }
 `
 export const NavbarInnerContainer = styled.div`
-
+  display:flex;
+  align-items: center;
 `
 export const NavbarLinkContainer = styled.div`
-
+  display:flex;
+  flex-direction: column;
 `
 export const NavbarLink = styled(Link)`
   @media (max-width:700px) {
@@ -110,7 +76,8 @@ export const NavbarLink = styled(Link)`
   }
 `
 export const NavbarLinkExtended = styled(Link)`
-
+  text-decoration: none;
+  color:black;
 `
 export const OpenLinksButton = styled.button`
   width: 70px;
@@ -123,7 +90,17 @@ export const OpenLinksButton = styled.button`
    display: none;
   }
 `
+export const NavbarExtendedLeft = styled.div`
+  flex:1;
+`
+export const NavbarExtendedCenter = styled.div`
+  flex:1;
 
+`
+export const NavbarExtendedRight = styled.div`
+  flex:1;
+
+`
 // const CartBtn = styled.button`
 //   background-color: none;
 //   background: none;

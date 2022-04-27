@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Badge from '@mui/material/Badge';
-import { NavbarContainer, NavbarInnerContainer, Left, Center, Right, Logo, SLink, MobileIcon, MobileLogo, NavbarExtendedContainer, NavbarLinkExtended, NavbarLinkContainer, NavbarLink, DropDownItems, OpenLinksButton } from './Navbar.style'
+import { NavbarContainer, NavbarInnerContainer, Left, Center, Right, Logo, NavbarExtendedLeft, NavbarExtendedCenter, NavbarExtendedRight, MobileLogo, NavbarExtendedContainer, NavbarLinkExtended, NavbarLinkContainer, NavbarLink, DropDownItems, OpenLinksButton } from './Navbar.style'
 
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -16,9 +16,6 @@ function Navbar() {
       <NavbarInnerContainer>
         <Left>
           <NavbarLinkContainer>
-            <OpenLinksButton onClick={() => { setExtendNavbar((curr) => !curr) }}>
-              {extendNavbar ? <CloseOutlinedIcon /> : <MenuOutlinedIcon />}
-            </OpenLinksButton>
             <Logo>
               <NavbarLink to={'/'}>LOREM.IPSUM</NavbarLink>
             </Logo>
@@ -34,12 +31,28 @@ function Navbar() {
           <NavbarLink to={'/login'}>LOGIN</NavbarLink>
         </Right>
       </NavbarInnerContainer>
+      <NavbarExtendedContainer>
+        <NavbarExtendedLeft>
+          <OpenLinksButton onClick={() => { setExtendNavbar((curr) => !curr) }}>
+            {extendNavbar ? <CloseOutlinedIcon /> : <MenuOutlinedIcon />}
+          </OpenLinksButton>
+        </NavbarExtendedLeft>
+        <NavbarExtendedCenter>
+          <MobileLogo>
+            <div to={'/'}>LOREM.IPSUM</div>
+          </MobileLogo>
+        </NavbarExtendedCenter>
+        <NavbarExtendedRight>
+        </NavbarExtendedRight>
+      </NavbarExtendedContainer>
       {extendNavbar && (
-        <NavbarExtendedContainer>
+        <NavbarLinkContainer>
           <NavbarLinkExtended to={'/look-book'}>LOOK BOOK</NavbarLinkExtended>
           <NavbarLinkExtended to={'/shop/all'}>SHOP</NavbarLinkExtended>
           <NavbarLinkExtended to={'/about'}>ABOUT</NavbarLinkExtended>
-        </NavbarExtendedContainer>
+          <NavbarLinkExtended to={'/register'}>REGISTER</NavbarLinkExtended>
+          <NavbarLinkExtended to={'/login'}>LOGIN</NavbarLinkExtended>
+        </NavbarLinkContainer>
       )}
     </NavbarContainer>
 
